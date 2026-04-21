@@ -11,11 +11,11 @@ class StringUtilsAppTest {
     // Exercici 8: prova parametritzada per a normalizeSpaces
     @ParameterizedTest
     @CsvSource({
-            "'hola   món',       'hola món'",
-            "'  espais  davanters  ',  'espais davanters'",
-            "'sense canvis',     'sense canvis'",
-            "'a  b  c  d',       'a b c d'",
-            "'un sol espai',     'un sol espai'"
+        "'hola   món',       'hola món'",
+        "'  espais  davanters  ',  'espais davanters'",
+        "'sense canvis',     'sense canvis'",
+        "'a  b  c  d',       'a b c d'",
+        "'un sol espai',     'un sol espai'"
     })
     void normalizeSpacesRedueixEspaisMultiples(String input, String expected) {
         assertEquals(expected, utils.normalizeSpaces(input));
@@ -23,11 +23,10 @@ class StringUtilsAppTest {
 
     @ParameterizedTest
     @CsvSource({
-            // Entrades amb tabuladors i espais barrejats
-            "'hola\tmón',    'hola món'"
+        // Entrades amb tabuladors i espais barrejats
+        "'hola\tmón',    'hola món'"
     })
     void normalizeSpacesTractaTabuladors(String input, String expected) {
         assertEquals(expected, utils.normalizeSpaces(input));
     }
 }
-
